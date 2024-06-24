@@ -15,11 +15,10 @@ $style-types: ('purple', 'transparent');
 
 @mixin click {
   &:hover {
-    opacity: 0.97;
-    transform: scale(0.99);
+    opacity: 0.95;
   }
   &:active {
-    transform: scale(0.93);
+    box-shadow: 0 0 0 1px var(--black);
   }
 }
 
@@ -41,7 +40,7 @@ $style-types: ('purple', 'transparent');
   justify-content: center;
   align-items: center;
   gap: 8px;
-  transition: all 1s;
+  transition: all 0.1s;
   cursor: pointer;
   font-size: 16px;
   &.s {

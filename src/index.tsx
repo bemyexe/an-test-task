@@ -1,9 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./app";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+import { SignPage } from './app/pages/SignPage';
+
+import './styles/global-styles.scss';
+import './styles/colors.scss';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <SignPage />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

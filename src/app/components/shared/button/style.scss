@@ -1,0 +1,56 @@
+$style-types: ('purple', 'transparent');
+
+@mixin button-styles {
+  @each $style-type in $style-types {
+    &.#{$style-type} {
+      @if $style-type == 'purple' {
+        @include purple();
+      }
+      @if $style-type == 'transparent' {
+        @include transparent();
+      }
+    }
+  }
+}
+
+@mixin click {
+  &:hover {
+    opacity: 0.97;
+    transform: scale(0.99);
+  }
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+@mixin purple {
+  background-color: var(--purple);
+  border: 1px solid var(--white);
+  color: var(--white);
+  @include click();
+}
+
+@mixin transparent {
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  @include click();
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 1s;
+  cursor: pointer;
+  font-size: 16px;
+  &.s {
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  &.l {
+    border-radius: 16px;
+    padding: 13px;
+  }
+  @include button-styles();
+}

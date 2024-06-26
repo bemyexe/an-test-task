@@ -39,6 +39,18 @@ class HttpClientImpl {
         return Promise.reject(error);
       }
     );
+
+    this._client.interceptors.response.use(
+      (response: AxiosResponse) => {
+        return response;
+      },
+      (error: AxiosError) => {
+        if (error.response) {
+          return Promise.reject(error.response);
+        }
+        return Promise.reject(error.response);
+      }
+    );
   }
 
   async get<ResponseType>(

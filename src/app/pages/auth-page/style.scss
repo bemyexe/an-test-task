@@ -23,6 +23,11 @@
       .auth-button {
         height: 48px;
       }
+      .auth-error {
+        color: var(--red);
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }

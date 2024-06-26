@@ -8,4 +8,5 @@ export const SIGN_PAGE_STRINGS = {
   nameExample: 'Введите имя, например: Артур',
   emailExample: 'example@mail.ru',
   hiddenPass: '******',
+  logIn: 'Войти',
 };

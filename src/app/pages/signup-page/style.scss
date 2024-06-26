@@ -17,19 +17,18 @@
       font-weight: 400;
       font-size: 20px;
     }
-  }
-
-  .signUp-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    .signUp-button {
-      height: 48px;
-    }
-    .signUp-error {
+    .signUp-form {
       display: flex;
-      justify-content: center;
-      color: var(--red);
+      flex-direction: column;
+      gap: 16px;
+      .signUp-button {
+        height: 48px;
+      }
+      .signUp-error {
+        display: flex;
+        justify-content: center;
+        color: var(--red);
+      }
     }
   }
 }

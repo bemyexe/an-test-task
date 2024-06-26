@@ -26,13 +26,13 @@ const registerSlice = createSlice({
         state.registerLoading = true;
         state.registerError = undefined;
       })
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(register.fulfilled, (state, { payload }) => {
         state.registerLoading = false;
-        StorageService.setToken(action.payload.token);
+        StorageService.setToken(payload.token);
       })
-      .addCase(register.rejected, (state, action) => {
+      .addCase(register.rejected, (state, { payload }) => {
         state.registerLoading = false;
-        state.registerError = action.payload;
+        state.registerError = payload;
       });
   },
 });

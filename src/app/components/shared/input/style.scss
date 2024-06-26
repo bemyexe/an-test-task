@@ -30,8 +30,9 @@
     .input-text {
       width: 95%;
       font-size: 14px;
-      color: var(--gray);
+      color: var(--black);
       background-color: var(--grayLight);
+      outline: none;
     }
 
     .input-icon {

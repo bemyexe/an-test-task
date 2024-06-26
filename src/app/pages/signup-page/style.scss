@@ -26,5 +26,10 @@
     .signUp-button {
       height: 48px;
     }
+    .signUp-error {
+      display: flex;
+      justify-content: center;
+      color: var(--red);
+    }
   }
 }

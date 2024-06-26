@@ -13,7 +13,7 @@ interface IInputProps {
   type?: 'password';
   placeholder?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  error: string;
+  error?: string;
 }
 
 export const Input: FC<IInputProps> = ({

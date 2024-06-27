@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { SIGN_PAGE_STRINGS } from '../../../constants/strings';
@@ -50,7 +51,7 @@ export const AuthPage = () => {
             title={SIGN_PAGE_STRINGS.password}
           />
           {authError && (
-            <div className="auth-error">Неверный логин или пароль</div>
+            <div className="auth-error">{SIGN_PAGE_STRINGS.loginError}</div>
           )}
           <Button
             onClick={() => handleSubmit()}
@@ -61,6 +62,10 @@ export const AuthPage = () => {
             {SIGN_PAGE_STRINGS.logIn}
           </Button>
         </form>
+        <div className="redirect">
+          {SIGN_PAGE_STRINGS.noAccount}
+          <Link to={'/'}>{SIGN_PAGE_STRINGS.registration}</Link>
+        </div>
       </div>
     </Page>
   );

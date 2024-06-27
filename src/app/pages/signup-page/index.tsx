@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { SIGN_PAGE_STRINGS } from '../../../constants/strings';
@@ -69,17 +70,23 @@ export const SignUpPage = () => {
             placeholder={SIGN_PAGE_STRINGS.hiddenPass}
           />
           {registerError && (
-            <div className="signUp-error">Ошибка регистрации</div>
+            <div className="signUp-error">
+              {SIGN_PAGE_STRINGS.registerError}
+            </div>
           )}
           <Button
             title={SIGN_PAGE_STRINGS.registration}
-            onClick={() => handleSubmit()}
+            onClick={handleSubmit}
             className="signUp-button"
             loading={registerLoading}
           >
             {SIGN_PAGE_STRINGS.registration}
           </Button>
         </form>
+        <div className="redirect">
+          {SIGN_PAGE_STRINGS.hasAccount}
+          <Link to={'/auth'}>{SIGN_PAGE_STRINGS.logIn}</Link>
+        </div>
       </div>
     </Page>
   );

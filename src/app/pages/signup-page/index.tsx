@@ -83,7 +83,7 @@ export const SignUpPage = () => {
             {SIGN_PAGE_STRINGS.registration}
           </Button>
         </form>
-        <div className="redirect">
+        <div className="link-to-auth">
           {SIGN_PAGE_STRINGS.hasAccount}
           <Link to={'/auth'}>{SIGN_PAGE_STRINGS.logIn}</Link>
         </div>

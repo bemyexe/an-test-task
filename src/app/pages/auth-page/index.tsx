@@ -62,7 +62,7 @@ export const AuthPage = () => {
             {SIGN_PAGE_STRINGS.logIn}
           </Button>
         </form>
-        <div className="redirect">
+        <div className="link-to-register">
           {SIGN_PAGE_STRINGS.noAccount}
           <Link to={'/'}>{SIGN_PAGE_STRINGS.registration}</Link>
         </div>

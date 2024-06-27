@@ -43,6 +43,8 @@ $style-types: ('purple', 'transparent');
   transition: all 0.1s;
   cursor: pointer;
   font-size: 16px;
+  word-break: break-all;
+
   &.s {
     border-radius: 8px;
     padding: 8px 16px;

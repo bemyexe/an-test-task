@@ -16,6 +16,7 @@
     .signUp-title {
       font-weight: 400;
       font-size: 20px;
+      word-wrap: break-word;
     }
     .signUp-form {
       display: flex;
@@ -28,7 +29,15 @@
         display: flex;
         justify-content: center;
         color: var(--red);
+        word-break: break-all;
       }
+    }
+    .redirect {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      word-break: break-all;
     }
   }
 }

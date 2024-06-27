@@ -15,6 +15,7 @@
     .auth-title {
       font-weight: 400;
       font-size: 20px;
+      word-wrap: break-word;
     }
     .auth-form {
       display: flex;
@@ -27,7 +28,15 @@
         color: var(--red);
         display: flex;
         justify-content: center;
+        word-break: break-all;
       }
+    }
+    .redirect {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      word-break: break-all;
     }
   }
 }

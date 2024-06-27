@@ -6,7 +6,7 @@ import { IUserReponse, IUsersReponse } from './responses/responses';
 class UsersServiceImpl {
   private readonly usersEndpoint: string = 'users/';
 
-  getUsers = async (page: number = 0): Promise<Users> => {
+  getUsers = async (page: number): Promise<Users> => {
     return await HttpClient.get<IUsersReponse>(
       `${this.usersEndpoint}?page=${page}`
     ).then((res) => res.data.data);

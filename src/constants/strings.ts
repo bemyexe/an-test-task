@@ -9,4 +9,8 @@ export const SIGN_PAGE_STRINGS = {
   emailExample: 'example@mail.ru',
   hiddenPass: '******',
   logIn: 'Войти',
+  registerError: 'Ошибка регистрации',
+  loginError: 'Неверный логин или пароль',
+  hasAccount: 'Уже есть аккаунт?',
+  noAccount: 'Нет аккаунта?',
 };

@@ -6,8 +6,15 @@ import './style.scss';
 interface IPageProps {
   children?: ReactNode;
   className?: string;
+  withHeader?: boolean;
 }
 
-export const Page = ({ children, className }: IPageProps) => {
-  return <div className={classNames('page', className)}>{children}</div>;
+export const Page = ({ children, className, withHeader }: IPageProps) => {
+  return (
+    <div
+      className={classNames('page', className, { 'with-header': withHeader })}
+    >
+      {children}
+    </div>
+  );
 };

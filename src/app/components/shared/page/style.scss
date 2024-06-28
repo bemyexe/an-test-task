@@ -1,3 +1,9 @@
+$header-height: 70px;
+
 .page {
   min-height: 100vh;
+
+  &.with-header {
+    min-height: calc(100vh - $header-height);
+  }
 }

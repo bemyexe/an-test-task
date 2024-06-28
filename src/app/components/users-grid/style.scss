@@ -1,0 +1,6 @@
+.users-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 305px));
+  gap: 20px;
+}

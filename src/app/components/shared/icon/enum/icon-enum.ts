@@ -3,4 +3,6 @@ export enum Icons {
   eyeOff = 'eye-off',
   like = 'like',
   likeOff = 'like-off',
+  logOut = 'log-out',
+  back = 'back',
 }

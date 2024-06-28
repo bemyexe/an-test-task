@@ -1,3 +1,5 @@
+@import 'src/styles/mixins.scss';
+
 .header {
   height: 70px;
   background-color: var(--purple);
@@ -5,4 +7,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 80px;
+  @include mobile {
+    padding: 0 25px;
+  }
+  .back {
+    display: flex;
+    justify-content: center;
+  }
 }

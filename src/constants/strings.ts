@@ -15,4 +15,5 @@ export const STRINGS = {
   noAccount: 'Нет аккаунта?',
   exit: 'Выход',
   back: 'Назад',
+  ourTeam: 'Наша команда',
 };

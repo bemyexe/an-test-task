@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { SIGN_PAGE_STRINGS } from '../../../constants/strings';
+import { STRINGS } from '../../../constants/strings';
 import { RegisterRequest } from '../../../services/auth.service/requests/requests';
 import { useAppDispatch } from '../../../store';
 import { registerSelectors } from '../../../store/register/register.selectors';
@@ -37,55 +37,53 @@ export const SignUpPage = () => {
   return (
     <Page className="signUp-page">
       <div className="signUp-main">
-        <h1 className="signUp-title">{SIGN_PAGE_STRINGS.title}</h1>
+        <h1 className="signUp-title">{STRINGS.title}</h1>
         <form className="signUp-form" method="post">
           <Input
-            title={SIGN_PAGE_STRINGS.name}
+            title={STRINGS.name}
             value={values.name}
             error={errors.name}
             onChange={handleChange('name')}
-            placeholder={SIGN_PAGE_STRINGS.nameExample}
+            placeholder={STRINGS.nameExample}
           />
           <Input
-            title={SIGN_PAGE_STRINGS.email}
+            title={STRINGS.email}
             value={values.email}
             error={errors.email}
             onChange={handleChange('email')}
-            placeholder={SIGN_PAGE_STRINGS.emailExample}
+            placeholder={STRINGS.emailExample}
           />
           <Input
-            title={SIGN_PAGE_STRINGS.password}
+            title={STRINGS.password}
             value={values.password}
             error={values.password.length < 6 ? errors.password : ''}
             onChange={handleChange('password')}
-            placeholder={SIGN_PAGE_STRINGS.hiddenPass}
+            placeholder={STRINGS.hiddenPass}
             type="password"
           />
           <Input
-            title={SIGN_PAGE_STRINGS.confirmPass}
+            title={STRINGS.confirmPass}
             value={values.confirmPassword}
             error={errors.confirmPassword}
             onChange={handleChange('confirmPassword')}
             type="password"
-            placeholder={SIGN_PAGE_STRINGS.hiddenPass}
+            placeholder={STRINGS.hiddenPass}
           />
           {registerError && (
-            <div className="signUp-error">
-              {SIGN_PAGE_STRINGS.registerError}
-            </div>
+            <div className="signUp-error">{STRINGS.registerError}</div>
           )}
           <Button
-            title={SIGN_PAGE_STRINGS.registration}
+            title={STRINGS.registration}
             onClick={handleSubmit}
             className="signUp-button"
             loading={registerLoading}
           >
-            {SIGN_PAGE_STRINGS.registration}
+            {STRINGS.registration}
           </Button>
         </form>
         <div className="link-to-auth">
-          {SIGN_PAGE_STRINGS.hasAccount}
-          <Link to={'/auth'}>{SIGN_PAGE_STRINGS.logIn}</Link>
+          {STRINGS.hasAccount}
+          <Link to={'/auth'}>{STRINGS.logIn}</Link>
         </div>
       </div>
     </Page>

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 
-import { SIGN_PAGE_STRINGS } from '../../../constants/strings';
+import { STRINGS } from '../../../constants/strings';
 import { useAppDispatch } from '../../../store';
 import { authSelectors } from '../../../store/auth/auth.selectors';
 import { login } from '../../../store/auth/auth.thunks';
@@ -39,32 +39,30 @@ export const AuthPage = () => {
             value={values.email}
             error={errors.email}
             onChange={handleChange('email')}
-            placeholder={SIGN_PAGE_STRINGS.emailExample}
-            title={SIGN_PAGE_STRINGS.email}
+            placeholder={STRINGS.emailExample}
+            title={STRINGS.email}
           />
           <Input
             value={values.password}
             error={errors.password}
             onChange={handleChange('password')}
-            placeholder={SIGN_PAGE_STRINGS.hiddenPass}
+            placeholder={STRINGS.hiddenPass}
             type="password"
-            title={SIGN_PAGE_STRINGS.password}
+            title={STRINGS.password}
           />
-          {authError && (
-            <div className="auth-error">{SIGN_PAGE_STRINGS.loginError}</div>
-          )}
+          {authError && <div className="auth-error">{STRINGS.loginError}</div>}
           <Button
             onClick={() => handleSubmit()}
-            title={SIGN_PAGE_STRINGS.logIn}
+            title={STRINGS.logIn}
             className="auth-button"
             loading={authLoading}
           >
-            {SIGN_PAGE_STRINGS.logIn}
+            {STRINGS.logIn}
           </Button>
         </form>
         <div className="link-to-register">
-          {SIGN_PAGE_STRINGS.noAccount}
-          <Link to={'/'}>{SIGN_PAGE_STRINGS.registration}</Link>
+          {STRINGS.noAccount}
+          <Link to={'/'}>{STRINGS.registration}</Link>
         </div>
       </div>
     </Page>

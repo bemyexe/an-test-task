@@ -1,4 +1,4 @@
-export const SIGN_PAGE_STRINGS = {
+export const STRINGS = {
   title: 'Регистрация',
   registration: 'Зарегистрироваться',
   name: 'Имя',
@@ -13,4 +13,6 @@ export const SIGN_PAGE_STRINGS = {
   loginError: 'Неверный логин или пароль',
   hasAccount: 'Уже есть аккаунт?',
   noAccount: 'Нет аккаунта?',
+  exit: 'Выход',
+  back: 'Назад',
 };

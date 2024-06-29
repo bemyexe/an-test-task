@@ -15,8 +15,13 @@ const selectRegisterError = createSelector(
   selectRegisterState,
   (state) => state.registerError
 );
+const selectRegisterSuccess = createSelector(
+  selectRegisterState,
+  (state) => state.registerSuccess
+);
 
 export const registerSelectors = {
   selectRegisterLoading,
   selectRegisterError,
+  selectRegisterSuccess,
 };

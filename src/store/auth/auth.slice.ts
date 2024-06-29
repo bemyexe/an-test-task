@@ -7,12 +7,14 @@ import { login, logout } from './auth.thunks';
 export interface IAuthState {
   loginLoading: boolean;
   loginError: undefined | string;
+  loginSuccess: boolean;
 }
 
 const AUTH_SLICE_NAME = 'auth-state';
 const INITIAL_AUTH_STATE: IAuthState = {
   loginLoading: false,
   loginError: undefined,
+  loginSuccess: false,
 };
 
 const authSlice = createSlice({
@@ -26,9 +28,9 @@ const authSlice = createSlice({
         state.loginError = undefined;
       })
       .addCase(login.fulfilled, (state, { payload }) => {
-        StorageService.setToken(payload.token);
         state.loginLoading = false;
-        state.loginError = undefined;
+        StorageService.setToken(payload.token);
+        state.loginSuccess = true;
       })
       .addCase(login.rejected, (state, { payload }) => {
         state.loginLoading = false;

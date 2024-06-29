@@ -15,8 +15,13 @@ const selectLoginError = createSelector(
   selectAuthState,
   (state) => state.loginError
 );
+const selectLoginSuccess = createSelector(
+  selectAuthState,
+  (state) => state.loginSuccess
+);
 
 export const authSelectors = {
   selectLoginLoading,
   selectLoginError,
+  selectLoginSuccess,
 };

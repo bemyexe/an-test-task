@@ -7,6 +7,7 @@ import { register } from './register.thunks';
 export interface IRegisterState {
   registerLoading: boolean;
   registerError?: undefined | string;
+  registerSuccess: boolean;
 }
 
 const REGISTER_SLICE_NAME = 'register-state';
@@ -14,6 +15,7 @@ const REGISTER_SLICE_NAME = 'register-state';
 const INITIAL_REGISTER_STATE: IRegisterState = {
   registerLoading: false,
   registerError: undefined,
+  registerSuccess: false,
 };
 
 const registerSlice = createSlice({
@@ -29,6 +31,7 @@ const registerSlice = createSlice({
       .addCase(register.fulfilled, (state, { payload }) => {
         state.registerLoading = false;
         StorageService.setToken(payload.token);
+        state.registerSuccess = true;
       })
       .addCase(register.rejected, (state, { payload }) => {
         state.registerLoading = false;

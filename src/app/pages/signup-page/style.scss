@@ -38,6 +38,12 @@
       gap: 5px;
       flex-wrap: wrap;
       word-break: break-all;
+      .link-to-auth-text {
+        color: var(--purple);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

@@ -37,6 +37,12 @@
       gap: 5px;
       flex-wrap: wrap;
       word-break: break-all;
+      .link-to-register-text {
+        color: var(--purple);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

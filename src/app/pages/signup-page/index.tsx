@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import { STRINGS } from '../../../constants/strings';
@@ -18,6 +19,8 @@ export const SignUpPage = () => {
   const dispatch = useAppDispatch();
   const registerLoading = useSelector(registerSelectors.selectRegisterLoading);
   const registerError = useSelector(registerSelectors.selectRegisterError);
+  const registerSuccess = useSelector(registerSelectors.selectRegisterSuccess);
+  const navigate = useNavigate();
 
   const { values, handleChange, handleSubmit, errors } =
     useFormik<RegisterRequest>({
@@ -33,6 +36,12 @@ export const SignUpPage = () => {
       validationSchema: registrationValidationSchema,
       validateOnChange: false,
     });
+
+  useEffect(() => {
+    if (registerSuccess) {
+      navigate('/main');
+    }
+  }, [registerSuccess, navigate]);
 
   return (
     <Page className="signUp-page">
@@ -83,7 +92,9 @@ export const SignUpPage = () => {
         </form>
         <div className="link-to-auth">
           {STRINGS.hasAccount}
-          <Link to={'/auth'}>{STRINGS.logIn}</Link>
+          <Link className="link-to-auth-text" to={'/auth'}>
+            {STRINGS.logIn}
+          </Link>
         </div>
       </div>
     </Page>

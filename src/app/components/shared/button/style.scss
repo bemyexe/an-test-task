@@ -18,7 +18,7 @@ $style-types: ('purple', 'transparent');
     opacity: 0.95;
   }
   &:active {
-    box-shadow: 0 0 0 1px var(--black);
+    border: 1px solid var(--black);
   }
 }
 

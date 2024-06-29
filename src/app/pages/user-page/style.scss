@@ -1,0 +1,87 @@
+@import 'src/styles/mixins.scss';
+
+.user-page {
+  display: flex;
+  flex-direction: column;
+  .user-page-header {
+    background-color: var(--purple);
+    height: 100%;
+    .user-page-header-container {
+      max-width: 1290px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 30px 10px;
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+      .user-page-header-avatar {
+        width: 124px;
+        height: 124px;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+      }
+      .user-page-header-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: var(--white);
+        @include mobile {
+          align-items: center;
+        }
+        .user-page-header-info-name {
+          font-size: 64px;
+          @include mobile {
+            font-size: 36px;
+          }
+        }
+        .user-page-header-info-job {
+          font-size: 32px;
+          @include mobile {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .user-page-main {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 10px;
+    display: flex;
+    gap: 130px;
+    @include mobile {
+      padding: 30px 10px;
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+    .user-page-main-text {
+      max-width: 636px;
+      width: 100%;
+      white-space: pre-line;
+    }
+    .user-page-main-info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      .user-page-main-info-phone-icon {
+        width: 22px;
+        height: 22px;
+      }
+      .user-page-main-info-mail-icon {
+        width: 22px;
+        height: 16px;
+      }
+      .user-page-main-phone,
+      .user-page-main-email {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        word-break: break-all;
+      }
+    }
+  }
+}

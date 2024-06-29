@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { STRINGS } from '../../../constants/strings';
 import { useAppDispatch } from '../../../store';
@@ -14,13 +14,14 @@ export const Header = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
   const isMainPage = location.pathname === '/main';
-
+  const navigate = useNavigate();
   const { isMobile } = useWindowSize();
 
   const handleBackButtonClick = () => {};
 
-  const handleLogoutButtonClick = () => {
+  const handleLogout = () => {
     dispatch(logout());
+    navigate('/auth');
   };
 
   const leftContent = !isMobile ? (
@@ -34,11 +35,11 @@ export const Header = () => {
   );
 
   const rightContent = !isMobile ? (
-    <Button title={STRINGS.exit} onClick={handleLogoutButtonClick}>
+    <Button title={STRINGS.exit} onClick={handleLogout}>
       {STRINGS.exit}
     </Button>
   ) : (
-    <Icon name={Icons.logOut} onClick={handleLogoutButtonClick} />
+    <Icon name={Icons.logOut} onClick={handleLogout} />
   );
 
   return (

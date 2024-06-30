@@ -17,7 +17,9 @@ export const Header = () => {
   const navigate = useNavigate();
   const { isMobile } = useWindowSize();
 
-  const handleBackButtonClick = () => {};
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   const handleLogout = () => {
     dispatch(logout());
@@ -26,12 +28,12 @@ export const Header = () => {
 
   const leftContent = !isMobile ? (
     !isMainPage && (
-      <Button title={STRINGS.back} onClick={handleBackButtonClick}>
+      <Button title={STRINGS.back} onClick={handleGoBack}>
         {STRINGS.back}
       </Button>
     )
   ) : (
-    <Icon onClick={handleBackButtonClick} name={Icons.back} className="back" />
+    <Icon onClick={handleGoBack} name={Icons.back} className="back" />
   );
 
   const rightContent = !isMobile ? (

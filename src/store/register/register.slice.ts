@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import StorageService from '../../storage-services/auth-storage.service/auth-storage.service';
+import { logout } from '../auth/auth.thunks';
 
 import { register } from './register.thunks';
 
@@ -36,6 +37,9 @@ const registerSlice = createSlice({
       .addCase(register.rejected, (state, { payload }) => {
         state.registerLoading = false;
         state.registerError = payload;
+      })
+      .addCase(logout, () => {
+        return INITIAL_REGISTER_STATE;
       });
   },
 });

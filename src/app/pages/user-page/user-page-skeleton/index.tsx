@@ -1,7 +1,7 @@
 import ContentLoader from 'react-content-loader';
 
-import { Page } from '../../../../components/shared/page';
-import useWindowSize from '../../../../hooks/use-window-size';
+import { Page } from '../../../components/shared/page';
+import useWindowSize from '../../../hooks/use-window-size';
 
 interface UserPageSkeletonProps {
   className?: string;

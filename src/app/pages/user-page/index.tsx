@@ -11,7 +11,7 @@ import { Icons } from '../../components/shared/icon/enum/icon-enum';
 import { Page } from '../../components/shared/page';
 import { ErrorPage } from '../error-page';
 
-import { UserPageSkeleton } from './components/user-page-skeleton';
+import { UserPageSkeleton } from './user-page-skeleton';
 
 import './style.scss';
 

@@ -71,7 +71,7 @@ export const AuthPage = () => {
         </form>
         <div className="link-to-register">
           {STRINGS.noAccount}
-          <Link className="link-to-register-text" to={'/'}>
+          <Link className="link-to-register-text" to={'/signup'}>
             {STRINGS.registration}
           </Link>
         </div>

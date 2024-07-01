@@ -4,7 +4,10 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { AuthPage } from './app/pages/auth-page';
+import { ErrorPage } from './app/pages/error-page';
+import { MainPage } from './app/pages/main-page';
 import { SignUpPage } from './app/pages/signup-page';
+import { UserPage } from './app/pages/user-page';
 import { SecuredRoutes } from './app/routes/secured-routes';
 import { store } from './store';
 
@@ -14,6 +17,21 @@ import './styles/colors.scss';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <SecuredRoutes />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'main',
+        element: <MainPage />,
+      },
+      {
+        path: 'users/:userId',
+        element: <UserPage />,
+      },
+    ],
+  },
+  {
+    path: '/signup',
     element: <SignUpPage />,
   },
   {
@@ -22,7 +40,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <SecuredRoutes />,
+    element: <ErrorPage />,
   },
 ]);
 

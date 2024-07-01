@@ -11,10 +11,12 @@ import { Icons } from '../../components/shared/icon/enum/icon-enum';
 import { Page } from '../../components/shared/page';
 import { ErrorPage } from '../error-page';
 
+import { UserPageSkeleton } from './components/user-page-skeleton';
+
 import './style.scss';
 
 export const UserPage = () => {
-  const { userId = '' } = useParams();
+  const { userId } = useParams();
   const dispatch = useAppDispatch();
   const user = useSelector(usersSelectors.selectSingleUser);
   const error = useSelector(usersSelectors.selectSingleUserError);
@@ -22,6 +24,10 @@ export const UserPage = () => {
   useEffect(() => {
     dispatch(getUser(Number(userId)));
   }, [dispatch, userId]);
+
+  if (isLoading) {
+    return <UserPageSkeleton />;
+  }
 
   if (error) {
     return <ErrorPage />;

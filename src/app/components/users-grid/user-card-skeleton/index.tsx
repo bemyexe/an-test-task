@@ -8,8 +8,8 @@ export const UserCardSkeleton = (props: SkeletonProps) => (
   <ContentLoader
     speed={2}
     width={329}
-    height={355}
-    viewBox="0 0 329 355"
+    height={320}
+    viewBox="0 0 329 320"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     {...props}

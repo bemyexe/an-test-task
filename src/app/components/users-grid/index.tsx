@@ -14,6 +14,7 @@ export const UserGrid = () => {
   const dispatch = useAppDispatch();
   const users = useSelector(usersSelectors.selectUsersList);
   const isUserLoading = useSelector(usersSelectors.selectUsersLoading);
+  const isUserError = useSelector(usersSelectors.selectUsersError);
 
   useEffect(() => {
     if (!users || users.length === 0) {
@@ -31,9 +32,13 @@ export const UserGrid = () => {
     [users]
   );
 
-  return (
-    <div className="users-grid">
-      {isUserLoading ? usersSkeleton : usersGrid}
-    </div>
-  );
+  if (isUserLoading) {
+    return <div className="users-grid">{usersSkeleton}</div>;
+  }
+
+  if (isUserError) {
+    return <div className="users-grid">{isUserError}</div>;
+  }
+
+  return <div className="users-grid">{usersGrid}</div>;
 };

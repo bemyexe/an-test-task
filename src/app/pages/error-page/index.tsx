@@ -8,7 +8,7 @@ import './style.scss';
 
 export const ErrorPage = () => {
   return (
-    <Page className="error-page">
+    <Page className="error-page" withHeader>
       <div className="error-page-main">
         {STRINGS.notFound}
         <Button title={STRINGS.back} onClick={() => {}}>

@@ -10,8 +10,32 @@
   @include mobile {
     padding: 0 25px;
   }
-  .back {
-    display: flex;
-    justify-content: center;
+
+  .header-left {
+    .header-left-back-button {
+      @include mobile {
+        display: none;
+      }
+    }
+    .header-left-back-icon {
+      display: flex;
+      justify-content: center;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .header-right {
+    .header-right-logout-button {
+      @include mobile {
+        display: none;
+      }
+    }
+    .header-right-logout-icon {
+      @include tablet {
+        display: none;
+      }
+    }
   }
 }

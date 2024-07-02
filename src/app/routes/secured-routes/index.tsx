@@ -15,6 +15,7 @@ export const SecuredRoutes = () => {
       navigate('/auth');
     } else {
       setIsLoading(false);
+      navigate('/main');
     }
   }, [navigate]);
 

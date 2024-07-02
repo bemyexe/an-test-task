@@ -26,22 +26,22 @@ export const Header = () => {
     navigate('/auth');
   };
 
-  const leftContent = !isMobile ? (
-    !isMainPage && (
-      <Button title={STRINGS.back} onClick={handleGoBack}>
-        {STRINGS.back}
-      </Button>
-    )
-  ) : (
-    <Icon onClick={handleGoBack} name={Icons.back} className="back" />
-  );
+  const leftContent = isMobile
+    ? !isMainPage && (
+        <Icon onClick={handleGoBack} name={Icons.back} className="back" />
+      )
+    : !isMainPage && (
+        <Button title={STRINGS.back} onClick={handleGoBack}>
+          {STRINGS.back}
+        </Button>
+      );
 
-  const rightContent = !isMobile ? (
+  const rightContent = isMobile ? (
+    <Icon name={Icons.logOut} onClick={handleLogout} />
+  ) : (
     <Button title={STRINGS.exit} onClick={handleLogout}>
       {STRINGS.exit}
     </Button>
-  ) : (
-    <Icon name={Icons.logOut} onClick={handleLogout} />
   );
 
   return (

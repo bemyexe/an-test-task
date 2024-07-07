@@ -8,6 +8,7 @@
 - React + Typescript
 - Redux + Redux Toolkit
 - CSS, SCSS
+- Axios, REST
 - ESLint + Prettier
 - Vite
 

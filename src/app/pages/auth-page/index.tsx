@@ -43,6 +43,7 @@ export const AuthPage = () => {
     <Page className="auth-page">
       <div className="auth-main">
         <h1 className="auth-title">Авторизация</h1>
+        <span>eve.holt@reqres.in</span>
         <form className="auth-form">
           <Input
             value={values.email}

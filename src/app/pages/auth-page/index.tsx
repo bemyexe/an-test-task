@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { toast } from 'sonner';
 
 import { STRINGS } from '../../../constants/strings';
 import { useAppDispatch } from '../../../store';
@@ -28,11 +29,11 @@ export const AuthPage = () => {
     },
     onSubmit: (values) => {
       dispatch(login(values));
+      toast.success('Login successful');
     },
     validationSchema: authValidationSchema,
     validateOnChange: false,
   });
-
   useEffect(() => {
     if (authSuccess) {
       navigate('/main');

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useMemo, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -7,7 +7,7 @@ import { Icons } from '../icon/enum/icon-enum';
 
 import './style.scss';
 
-interface IInputProps {
+interface InputProps {
   title: string;
   value: string;
   type?: 'password';
@@ -16,14 +16,14 @@ interface IInputProps {
   error?: string;
 }
 
-export const Input: FC<IInputProps> = ({
+export const Input = ({
   title,
   value,
   type,
   placeholder,
   onChange,
   error,
-}) => {
+}: InputProps) => {
   {
     const [passwordHide, setPasswordHide] = useState<boolean>(true);
     const uniqueId = useMemo(() => `input_${uuidv4()}`, []);

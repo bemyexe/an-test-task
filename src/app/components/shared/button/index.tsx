@@ -27,6 +27,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       size = 's',
       styleType = 'purple',
+      ...props
     },
     ref
   ) => (
@@ -36,6 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       title={title}
       className={classNames('button', size, styleType, className)}
       ref={ref}
+      {...props}
     >
       {loading ? <Loader /> : children}
     </button>

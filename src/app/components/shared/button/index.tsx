@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ComponentProps, forwardRef } from 'react';
 import classNames from 'classnames';
 
 import { Loader } from '../loader';
@@ -9,35 +9,35 @@ type ButtonSise = 's' | 'l';
 
 type StyleType = 'purple' | 'transparent';
 
-interface IButtonProps {
-  onClick: () => void;
+interface ButtonProps extends ComponentProps<'button'> {
   loading?: boolean;
-  children: ReactNode;
   type?: 'button' | 'submit';
-  title: string;
-  className?: string;
   size?: ButtonSise;
   styleType?: StyleType;
 }
 
-export const Button: FC<IButtonProps> = ({
-  onClick,
-  loading,
-  children,
-  type = 'button',
-  title,
-  className,
-  size = 's',
-  styleType = 'purple',
-}) => {
-  return (
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      onClick,
+      loading,
+      children,
+      type = 'button',
+      title,
+      className,
+      size = 's',
+      styleType = 'purple',
+    },
+    ref
+  ) => (
     <button
       onClick={onClick}
       type={type}
       title={title}
       className={classNames('button', size, styleType, className)}
+      ref={ref}
     >
       {loading ? <Loader /> : children}
     </button>
-  );
-};
+  )
+);
